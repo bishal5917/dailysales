@@ -6,17 +6,19 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 
 import com.example.dailysales.R;
+import com.example.dailysales.databinding.ActivityAddSaleBinding;
 import com.example.dailysales.databinding.ActivityMainBinding;
+import com.example.dailysales.utils.DateUtil;
 
 public class AddSaleActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    private ActivityAddSaleBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Inflate the layout using Data Binding
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityAddSaleBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Set the toolbar
@@ -24,5 +26,6 @@ public class AddSaleActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Add your sale for today");
         }
+        binding.tvTodaysDate.setText(DateUtil.getDate());
     }
 }
