@@ -18,11 +18,6 @@ public class CustomToast {
 
     private static void showToast(Context context, String message, int backgroundColor) {
         Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-        TextView textView = toast.getView().findViewById(android.R.id.message);
-        if (textView != null) {
-            textView.setTextColor(Color.WHITE);
-        }
-        toast.getView().setBackground(new ColorDrawable(backgroundColor));
         toast.show();
     }
 }
