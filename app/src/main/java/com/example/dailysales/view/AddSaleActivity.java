@@ -1,18 +1,15 @@
 package com.example.dailysales.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 
-import com.example.dailysales.R;
 import com.example.dailysales.databinding.ActivityAddSaleBinding;
-import com.example.dailysales.databinding.ActivityMainBinding;
 import com.example.dailysales.utils.CustomToast;
 import com.example.dailysales.utils.DateUtil;
 import com.example.dailysales.viewmodel.MainViewModel;
-import com.example.dailysales.viewmodel.database.entities.SaleRecord;
+import com.example.dailysales.database.entities.SaleRecord;
 
 import javax.inject.Inject;
 

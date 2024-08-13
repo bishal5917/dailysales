@@ -1,4 +1,4 @@
-package com.example.dailysales.viewmodel.database;
+package com.example.dailysales.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.example.dailysales.viewmodel.database.entities.SaleRecord;
+import com.example.dailysales.database.entities.SaleRecord;
 
 import java.util.List;
 

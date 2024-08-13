@@ -1,4 +1,4 @@
-package com.example.dailysales.viewmodel.database;
+package com.example.dailysales.database;
 
 import androidx.room.TypeConverter;
 import java.util.Date;

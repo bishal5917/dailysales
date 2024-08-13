@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.example.dailysales.repository.MainRepository;
 import com.example.dailysales.utils.DateUtil;
-import com.example.dailysales.viewmodel.database.entities.SaleRecord;
+import com.example.dailysales.database.entities.SaleRecord;
 
 import java.util.List;
 

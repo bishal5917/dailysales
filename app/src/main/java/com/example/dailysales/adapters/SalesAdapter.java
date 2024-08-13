@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dailysales.databinding.SalesRvItemBinding;
 import com.example.dailysales.utils.GlobalUtil;
 import com.example.dailysales.view.MainActivity;
-import com.example.dailysales.viewmodel.database.entities.SaleRecord;
+import com.example.dailysales.database.entities.SaleRecord;
 
 import java.util.List;
 

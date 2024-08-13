@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.dailysales.utils.DateUtil;
-import com.example.dailysales.viewmodel.database.AppDao;
-import com.example.dailysales.viewmodel.database.entities.SaleRecord;
+import com.example.dailysales.database.AppDao;
+import com.example.dailysales.database.entities.SaleRecord;
 
 import java.util.List;
 

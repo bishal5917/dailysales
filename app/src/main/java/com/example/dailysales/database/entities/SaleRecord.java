@@ -1,4 +1,4 @@
-package com.example.dailysales.viewmodel.database.entities;
+package com.example.dailysales.database.entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
