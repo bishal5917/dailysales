@@ -42,6 +42,6 @@ public class MainRepository extends ViewModel {
 
     //get data of five days ago
     public LiveData<List<SaleRecord>> getLastFiveDaySales() {
-        return dao.getSalesInDateRange(DateUtil.getDateOnlyTimestamp(),DateUtil.getStartOfDayFiveDaysAgo());
+        return dao.getSalesInDateRange(DateUtil.getStartOfDayFiveDaysAgo(),DateUtil.getDateOnlyTimestamp());
     }
 }

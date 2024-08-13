@@ -2,10 +2,13 @@ package com.example.dailysales.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.dailysales.adapters.SalesAdapter;
 import com.example.dailysales.databinding.ActivityMainBinding;
 import com.example.dailysales.utils.DateUtil;
 import com.example.dailysales.utils.GlobalUtil;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     MainViewModel mainViewModel;
 
+    private SalesAdapter salesAdapter;
     private ActivityMainBinding binding;
 
     @Override
@@ -75,12 +79,25 @@ public class MainActivity extends AppCompatActivity {
                 binding.tvSalesOfToday.setText("Your sale for today is Rs. "+0);
             }
         });
+        mainViewModel.getPastFiveSales().observe(this, s -> {
+            if (s.size()==0){
+                binding.tvNotData.setVisibility(View.VISIBLE);
+                binding.rv.setVisibility(View.GONE);
+            }else{
+                binding.tvNotData.setVisibility(View.GONE);
+                binding.rv.setVisibility(View.VISIBLE);
+                salesAdapter = new SalesAdapter(this, s);
+                binding.rv.setLayoutManager(new LinearLayoutManager(this));
+                binding.rv.setAdapter(salesAdapter);
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         // reload again on onResume
+        mainViewModel.loadPastFiveDaySales();
         mainViewModel.loadSaleOfDay();
         mainViewModel.loadSaleOfMonth();
     }
