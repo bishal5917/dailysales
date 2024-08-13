@@ -1,5 +1,8 @@
 plugins {
     id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -14,6 +17,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // Other configurations
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -31,14 +36,14 @@ android {
     }
 
     buildFeatures {
-        viewBinding=true
-        dataBinding=true
+        viewBinding = true
+        dataBinding = true
     }
 }
 
 dependencies {
 
-    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
@@ -52,13 +57,10 @@ dependencies {
 
     // Room
     implementation("androidx.room:room-runtime:2.2.5")
-//    kapt 'androidx.room:room-compiler:2.2.5'
-
-    // Activity KTX for viewModels()
-//    implementation "androidx.activity:activity-ktx:1.1.0"
+    kapt("androidx.room:room-compiler:2.2.5")
 
     //Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.42")
-//    kapt "com.google.dagger:hilt-android-compiler:2.42"
-//    kapt "androidx.hilt:hilt-compiler:1.0.0-alpha02"
+    kapt("com.google.dagger:hilt-android-compiler:2.42")
+    kapt("androidx.hilt:hilt-compiler:1.0.0-alpha02")
 }

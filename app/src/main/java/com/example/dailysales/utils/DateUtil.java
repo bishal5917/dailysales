@@ -11,6 +11,16 @@ public class DateUtil {
         return currentDate.getMonth().toString();
     }
 
+    public static int getDay() {
+        LocalDate currentDate = LocalDate.now();
+        return currentDate.getDayOfMonth();
+    }
+
+    public static int getYear() {
+        LocalDate currentDate = LocalDate.now();
+        return currentDate.getYear();
+    }
+
     public static String getDate() {
         LocalDate currentDate = LocalDate.now();
         Month month = currentDate.getMonth();
@@ -33,5 +43,14 @@ public class DateUtil {
         } else {
             return "Welcome, Ram !";
         }
+    }
+
+    public static long getDateOnlyTimestamp() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTimeInMillis();
     }
 }

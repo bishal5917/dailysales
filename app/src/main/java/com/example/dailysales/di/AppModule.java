@@ -4,8 +4,10 @@ import android.content.Context;
 
 import androidx.room.Room;
 
-import com.example.dailysales.database.AppDao;
-import com.example.dailysales.database.SalesDatabase;
+import com.example.dailysales.repository.MainRepository;
+import com.example.dailysales.viewmodel.MainViewModel;
+import com.example.dailysales.viewmodel.database.AppDao;
+import com.example.dailysales.viewmodel.database.SalesDatabase;
 import com.example.dailysales.utils.Constants;
 
 import javax.inject.Singleton;
@@ -36,6 +38,22 @@ public class AppModule {
             SalesDatabase database
     ) {
         return database.appDao();
+    }
+
+    @Singleton
+    @Provides
+    public MainViewModel providesMainViewModel(
+            MainRepository mainRepository
+    ) {
+        return new MainViewModel(mainRepository);
+    }
+
+    @Singleton
+    @Provides
+    public MainRepository providesMainRepository(
+            AppDao appDao
+    ) {
+        return new MainRepository(appDao);
     }
 }
 
